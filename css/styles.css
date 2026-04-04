@@ -46,7 +46,12 @@ img {
 }
 
 .header {
-border-bottom: 1px solid #e7e9fc
+border-bottom: 1px solid #e7e9fc;
+position: sticky;
+top: 0;
+background-color: #fff;
+box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
+z-index: 10;
 }
 
 .container {
@@ -116,16 +121,15 @@ padding: 24px 0;
 position: relative;
 }
 
-.header-link-studio::after {
+.header-link-studio::after,
+.header-link::after {
   content: "";
-  display: block;
-  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
   height: 4px;
   background-color: #4d5ae5;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border-radius: 2px;
+  bottom: -4px;
 }
 
 .header-link:hover,
@@ -149,6 +153,14 @@ padding: 24px 0;
 .header-adress-link:hover,
 .header-adress-link:focus {
   color: #404bbf;
+}
+
+.header-link,
+.header-link-studio,
+.header-adress-link {
+  color: #4d5ae5;
+  text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-section {
@@ -193,11 +205,13 @@ border: none;
 min-width: 169px;
 display: block;
 margin: 0 auto;
+background-color: #4d5ae5;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-section-button:hover,
 .main-section-button:focus {
-background-color: #404BBF;
+background-color: #404bbf;
 }
 
 .features {
@@ -321,7 +335,7 @@ margin-bottom: 8px;
 
 .team-social-link:hover,
 .team-social-link:focus {
-  background-color: #31d0aa;
+  background-color: #404bbf;
 }
 
 .port {
